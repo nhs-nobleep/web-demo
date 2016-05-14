@@ -1,0 +1,165 @@
+<html>
+
+    <head>
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/bootstrap-theme.css">
+        <link rel="stylesheet" href="css/nobleep.css">
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+        
+<script src="js/bootstrap.min.js"></script>
+        
+<!-- List !-->        
+    <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.2.0/list.min.js"></script>
+
+        
+    </head>
+
+    <body>
+        
+        
+         <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">No Bleep</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Add</a></li>
+            <li><a href="list.html">View</a></li>
+
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+        <br><br><br>
+        <h2>Add Task</h2>
+        
+        <form id="addtask" action="http://posttestserver.com/post.php
+" method="post">
+        
+        
+        <div id="team">
+        <div class="btn-label">Select Team</div>
+            <div class="btn-group" data-toggle="buttons">
+          <label class="btn btn-default">
+            <input type="radio" name="team_id" value="medicine" id="medicine">Medicine
+          </label>
+                <label class="btn btn-default">
+            <input type="radio" name="team_id" value="surgery" id="surgery">Surgery
+          </label>
+                <label class="btn btn-default">
+            <input type="radio" name="team_id" value="specialities" id="specialities">Specialities
+          </label>
+            </div>
+        </div>
+        <br><br>
+        
+       
+        
+        <div id="">
+                <div class="btn-label">Ward</div>
+                <input type="text" class="form-control" name="WARD">
+      
+         </div>
+          
+            
+        Bed
+        <input class="form-control" name="bed" maxlength="4">
+            
+            
+       Patient Initials
+        <input class="form-control" name="patient_id" maxlength="4">
+            
+       <br><br> 
+       
+            
+            
+            
+        
+         <div id="">
+            <div class="btn-label">Urgency</div>        
+            <div class="btn-group" data-toggle="buttons">
+          <label class="btn btn-lg btn-default">
+            <input type="radio" name="urgency" value="1">1
+          </label>
+                <label class="btn btn-lg btn-default">
+            <input type="radio" name="urgency" value="2">2
+          </label>
+                <label class="btn btn-lg btn-default">
+            <input type="radio" name="urgency" value="3">3
+          </label>
+        </div>
+        
+        
+        <br><br><br>
+        <div id="">
+                <div class="btn-label">Select Task</div>
+            <div class="" data-toggle="buttons">
+          <label class="btn btn-default col-xs-12">
+            <input type="radio" name="creator_comment" value="Drug Chart">Drug Chart
+          </label>
+                <label class="btn btn-default col-xs-12">
+            <input type="radio" name="creator_comment"  value="Cannula">Cannula
+          </label>
+                <label class="btn btn-default col-xs-12">
+            <input type="radio" name="creator_comment"  value="Prescribe">Prescribe Meds
+          </label>
+            </div>
+         </div>
+                       
+            <br>
+            <br>
+            
+            Or Other...
+            <input type="text" name="creator_comment" class="form-control">
+
+            
+            <br>
+             
+             
+             My Name
+             <input type="text" name="creator_name" class="form-control" placeholder="">
+             <br><br>
+             
+             
+             
+            <button class="btn btn-lg btn-success" id="submit">Submit</button>
+             
+             </form>
+            
+    </div>
+                
+        <script type="text/javascript">
+        
+        $( document ).ready(function() {
+          
+            
+            $("#task").hide();
+            
+            $("#submit").on("click", function(){
+               $("#addtask")submit(); 
+            });
+            
+        });
+        
+        </script>
+        
+
+    </body>
+        
+
+    
+</html>
