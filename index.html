@@ -146,12 +146,12 @@
         
         $( document ).ready(function() {
           
-            
-            $("#task").hide();
-            
-            $("#submit").on("click", function(){
-               $("#addtask")submit(); 
-            });
+            alert("loaded");
+           $.getJSON("http://yourserver/JSONServlet",
+            function(data){
+            alert (data) // this will show your actual json array
+          });
+    });
             
         });
         
