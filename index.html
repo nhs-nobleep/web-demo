@@ -47,21 +47,25 @@
         <br><br><br>
         <h2>Add Task</h2>
         
-        <form id="addtask" action="http://posttestserver.com/post.php
-" method="post">
+        <form id="addtask" action="https://powerful-dawn-95782.herokuapp.com/job/create" method="post">
         
+            <!-- "https://powerful-dawn-95782.herokuapp.com/job/create" 
+
+            http://posttestserver.com/post.php
+            -->
+            <input type="text" hidden="true" name="location" value="hospital">
         
         <div id="team">
         <div class="btn-label">Select Team</div>
             <div class="btn-group" data-toggle="buttons">
           <label class="btn btn-default">
-            <input type="radio" name="team_id" value="medicine" id="medicine">Medicine
+            <input type="radio" name="team_id" value="1" id="medicine">Medicine
           </label>
                 <label class="btn btn-default">
-            <input type="radio" name="team_id" value="surgery" id="surgery">Surgery
+            <input type="radio" name="team_id" value="2" id="surgery">Surgery
           </label>
                 <label class="btn btn-default">
-            <input type="radio" name="team_id" value="specialities" id="specialities">Specialities
+            <input type="radio" name="team_id" value="3" id="specialities">Specialities
           </label>
             </div>
         </div>
@@ -71,7 +75,7 @@
         
         <div id="">
                 <div class="btn-label">Ward</div>
-                <input type="text" class="form-control" name="WARD">
+                <input type="text" class="form-control" name="ward">
       
          </div>
           
@@ -146,12 +150,12 @@
         
         $( document ).ready(function() {
           
-            alert("loaded");
-           $.getJSON("http://yourserver/JSONServlet",
-            function(data){
-            alert (data) // this will show your actual json array
-          });
-    });
+            
+            $("#task").hide();
+            
+            $("#submit").on("click", function(){
+               $("#addtask")submit(); 
+            });
             
         });
         
