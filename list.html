@@ -30,7 +30,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.html">No Bleep</a>
+          <a class="navbar-brand" href="index.html">BleeFree</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -47,7 +47,8 @@
         <h2>Task List</h2>
 
             <table id="table" class="table">
-            
+            <th>Ward/Bed</th>
+            <th>Task</th>
             </table>
     </div>
                 
@@ -55,37 +56,28 @@
         
         $( document ).ready(function() {
           
-           var text = '{ "employees" : [' +
-            '{ "firstName":"John" , "lastName":"Doe" },' +
-            '{ "firstName":"Anna" , "lastName":"Smith" },' +
-            '{ "firstName":"Peter" , "lastName":"Jones" } ]}';
-
-                    
-            var obj = JSON.parse(text);
-            
-            
-            
-            
-            
-            i = 0;
-            
-            for (i = 0; i < obj.employees.length; i++)
-            {
-                
-                
-                $("#table").append("<tr><td>"+
-                           obj.employees[i].firstName +
-                "</td></tr>");
-            }
-            
-            
-        
-            
             
        
            $.getJSON("http://powerful-dawn-95782.herokuapp.com/job/read",
             function(data){
-            alert (data); // this will show your actual json array
+            
+               
+               
+               for (i = 0; i < data.jobs.length; i++)
+               {
+                
+                
+                $("#table").append("<tr><td>"+
+                           data.jobs[i].ward + " / " + data.jobs[i].patient_id +
+                "</td><td>"+
+                    data.jobs[i].creator_comment +        
+                
+                "</td><td><form action='https://powerful-dawn-95782.herokuapp.com/job/update/"+ data.jobs[i].id +"' method='post'><input type='text' name='done' value='true' hidden='true'><button class='btn btn-success'>Done</button></form></td></tr>"         
+                );
+                }
+            
+               
+               
           });
     
            
